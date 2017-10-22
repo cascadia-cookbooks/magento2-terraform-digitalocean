@@ -5,9 +5,9 @@ variable "environment" {
 }
 
 # Domain
-variable "domain" {
-    description = "Domain name"
-    default = "magento.test"
+variable "project-id" {
+    description = "Project identifier"
+    default = "magetest"
 }
 
 # Pulls variables from LastPass
