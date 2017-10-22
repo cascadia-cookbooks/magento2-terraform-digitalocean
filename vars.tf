@@ -5,7 +5,7 @@ variable "environment" {
 }
 
 # Domain
-variable "project-id" {
+variable "project_id" {
     description = "Project identifier"
     default = "magetest"
 }
@@ -13,12 +13,12 @@ variable "project-id" {
 # Pulls variables from LastPass
 data "external" "lpass" {
     query = {
-        project = "${var.lastpass-project}"
+        project = "${var.lastpass_project}"
     }
     program = ["bash", "${path.module}/scripts/lpass-data.sh"]
 }
 
-variable "lastpass-project" {
+variable "lastpass_project" {
     description = "Project name in LastPass"
     default = "Magento 2 Template"
 }
