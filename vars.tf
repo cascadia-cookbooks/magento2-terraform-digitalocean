@@ -28,9 +28,3 @@ variable "region" {
     description = "Default data center region"
     default = "sfo1"
 }
-
-# Load balancer HTTP to HTTPS redirect
-variable "lb-https-redirect" {
-    description = "Boolean to enable HTTP to HTTPS redirection"
-    default = true
-}
