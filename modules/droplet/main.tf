@@ -8,5 +8,5 @@ resource "digitalocean_droplet" "droplet" {
     backups = "${var.droplet_backups}"
     private_networking = "${var.droplet_private_networking}"
     ssh_keys = "${var.droplet_ssh_keys}"
-    user_data = "${var.droplet_user_data}"
+    user_data = "${coalesce(var.droplet_user_data, "echo 'No user-data configured'")}"
 }

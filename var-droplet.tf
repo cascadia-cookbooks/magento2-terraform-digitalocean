@@ -16,7 +16,7 @@ variable "web_ssh_keys" {
 }
 
 variable "web_user_data" {
-    default = "Module test, please see README"
+    default = ""
 }
 
 
@@ -34,5 +34,5 @@ variable "data_ssh_keys" {
 }
 
 variable "data_user_data" {
-    default = "Module test, please see README"
+    default = ""
 }
