@@ -22,3 +22,15 @@ variable "lastpass-project" {
     description = "Project name in LastPass"
     default = "Magento 2 Template"
 }
+
+# Data center region
+variable "region" {
+    description = "Default data center region"
+    default = "sfo1"
+}
+
+# Load balancer HTTP to HTTPS redirect
+variable "lb-https-redirect" {
+    description = "Boolean to enable HTTP to HTTPS redirection"
+    default = true
+}
