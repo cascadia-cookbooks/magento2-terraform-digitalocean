@@ -1,3 +1,4 @@
+# Web droplet variables
 variable "web_count" {
     default = 2
 }
@@ -15,5 +16,23 @@ variable "web_ssh_keys" {
 }
 
 variable "web_user_data" {
+    default = "temp"
+}
+
+
+# Data droplet variables
+variable "data_count" {
+    default = 1
+}
+
+variable "data_name" {
+    default = "data"
+}
+
+variable "data_ssh_keys" {
+    default = ["example"]
+}
+
+variable "data_user_data" {
     default = "temp"
 }
