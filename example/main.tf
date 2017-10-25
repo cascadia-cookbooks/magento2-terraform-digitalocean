@@ -1,22 +1,22 @@
-# Set environment identifier variable
-variable "environment" {
-    description = "Environment identifier"
-    default = "staging"
-}
-
 # Magento module resource
 module "magento" {
     source = "github.com/cascadia-cookbooks/magento2-terraform-digitalocean"
+
+    # LastPass project identifier
+    lastpass_project = "My Unique LastPass Project Name"
+
+    # Project identifier (should be consistent across environments)
+    project_id = "your_unique_project"
 
     # DigitalOcean data center region
     region = "nyc1"
 
     # Environment identifier
-    environment = "${var.environment}"
+    environment = "staging"
 
     # Web droplet overrides
     web_count = 3
-    web_user_data = "${data.template_file.web.rendered}"
+    web_user_data = "curl -sL https://example.com/your/provisioning/script | sudo -E bash -"
     web_ssh_keys = [
         "aaaaaa",
         "bbbbbb"
@@ -29,16 +29,6 @@ module "magento" {
         "bbbbbb",
         "cccccc"
     ]
-}
-
-# User data template files
-data "template_file" "web" {
-    template = "${file("${path.module}/templates/user-data.tpl")}"
-
-    vars {
-        environment = "${var.environment}"
-        role = "web"
-    }
 }
 
 data "template_file" "data" {
