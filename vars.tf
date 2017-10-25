@@ -4,7 +4,7 @@ variable "environment" {
     default = "testing"
 }
 
-# Domain
+# Project identifier
 variable "project_id" {
     description = "Project identifier"
     default = "magetest"
